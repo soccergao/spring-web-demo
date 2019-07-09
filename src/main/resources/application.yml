@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spring-web-demo
+
+server:
+  port: 8090
+  servlet:
+    context-path: /
