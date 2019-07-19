@@ -15,7 +15,7 @@ public @interface PasswordCheck {
 
     String message() default "密码格式错误";
 
-    Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 }

@@ -7,7 +7,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @Builder
@@ -26,12 +26,15 @@ public class User {
 
     @JsonView(UserDetailView.class)
     @Past(message = "生日必须是过去的时间")
-    private LocalDateTime birthday;
+    private LocalDate birthday;
 
-//    @JsonView使用方法:
+    //    @JsonView使用方法:
 //    1. 使用接口来声明多个视图
 //    2. 在pojo的get方法上指定视图
 //    3. 在Controller方法上指定视图
-    public interface UserSimpleView {}
-    public interface UserDetailView extends UserSimpleView {}
+    public interface UserSimpleView {
+    }
+
+    public interface UserDetailView extends UserSimpleView {
+    }
 }
